@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/* Page background + text color */
+/* Page background */
 body {
   background: gray;
   margin: 25px;
@@ -45,7 +45,7 @@ h1 {
 /* Animal image */
 .animal img {
   width: 100px;
-  height: 100px;
+  height: 150px;
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 8px;
