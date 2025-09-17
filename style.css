@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page background + text color */
+body {
+  background: gray;
+  margin: 25px;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+/* Intro paragraph */
+.p {
+  text-align: center;
+  margin: 30px;
+}
+
+/* Main heading */
+h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Animal list container */
+.anlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Animal card */
+.animal {
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 150px;
+}
+
+/* Animal image */
+.animal img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* Vote + Reset buttons with number in one row */
+.vote-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Vote count number */
+.votes {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: darkblue;
+}
+
+/* Buttons */
+button {
+  padding: 5px 10px;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid brown;
+  background-color: white;
+  color: brown;
+  transition: 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: brown;
+  color: white;
+}
