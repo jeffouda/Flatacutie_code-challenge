@@ -7,60 +7,86 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <head>
-      <h1>Animal list</h1>
-      <p class="p">
-        To Vote for your favourite animal,click on the
-        <strong>'0'</strong> button.
-      </p>
-    </head>
+    <h1>Animal list</h1>
+    <p class="p">
+      Vote for your favourite animal by pressing the
+      <strong>'Vote'</strong> button.
+    </p>
+
     <section class="zoo">
       <div class="anlist">
-        <div id="images">
+        <!-- Mr Cute -->
+        <div class="animal">
           <img
             src="images/stock-photo-javan-rhino-this-powerful-close-up-photograph-captures-the-unique-features-of-the-critically-2500025911.jpg"
-            alt="cute"
-          /><br />
-          Mr. Cute
+            alt="Mr. Cute"
+          />
+          <b>Mr. Cute</b>
+          <p class="vote-box">
+            <button onclick="increase(this)">Vote</button>
+            <span class="votes">0</span>
+            <button onclick="resetVotes(this)">Reset</button>
+          </p>
+        </div>
 
-          <p>
-            vote:<button onclick="increase(this)">0</button
-            ><button onclick="reset(this)">Reset</button>
+        <!-- Mx Monkey -->
+        <div class="animal">
+          <img
+            src="images/Bonnet_macaque_(Macaca_radiata)_Photograph_By_Shantanu_Kuveskar.jpg"
+            alt="Mx. Monkey"
+          />
+          <b>Mx. Monkey</b>
+          <p class="vote-box">
+            <button onclick="increase(this)">Vote</button>
+            <span class="votes">0</span>
+            <button onclick="resetVotes(this)">Reset</button>
+          </p>
+        </div>
+
+        <!-- Ms Zebra -->
+        <div class="animal">
+          <img
+            src="https://media2.giphy.com/media/20G9uNqE3K4dRjCppA/source.gif"
+            alt="Ms. Zebra"
+          />
+          <b>Ms. Zebra</b>
+          <p class="vote-box">
+            <button onclick="increase(this)">Vote</button>
+            <span class="votes">0</span>
+            <button onclick="resetVotes(this)">Reset</button>
+          </p>
+        </div>
+
+        <!-- Dr Lion -->
+        <div class="animal">
+          <img
+            src="http://bestanimations.com/Animals/Mammals/Cats/Lions/animated-lion-gif-11.gif"
+            alt="Dr. Lion"
+          />
+          <b>Dr. Lion</b>
+          <p class="vote-box">
+            <button onclick="increase(this)">Vote</button>
+            <span class="votes">0</span>
+            <button onclick="resetVotes(this)">Reset</button>
+          </p>
+        </div>
+
+        <!-- Mme Panda -->
+        <div class="animal">
+          <img
+            src="https://media.giphy.com/media/ALalVMOVR8Qw/giphy.gif"
+            alt="Mme. Panda"
+          />
+          <b>Mme. Panda</b>
+          <p class="vote-box">
+            <button onclick="increase(this)">Vote</button>
+            <span class="votes">0</span>
+            <button onclick="resetVotes(this)">Reset</button>
           </p>
         </div>
       </div>
-      <div id="images">
-        <img
-          src="images/Bonnet_macaque_(Macaca_radiata)_Photograph_By_Shantanu_Kuveskar.jpg"
-          alt="Monkey"
-        /><br />Mx Monkey
-
-        <p>
-          vote:<button onclick="increase(this)">0</button
-          ><button onclick="reset(this)">Reset</button>
-        </p>
-      </div>
-      <div id="images">
-        <img
-          src="https://media2.giphy.com/media/20G9uNqE3K4dRjCppA/source.gif"
-          alt="Zebra"
-        /><br />Ms. Zebra
-
-        <p>
-          vote:<button onclick="increase(this)">0</button
-          ><button onclick="reset(this)">Reset</button>
-        </p>
-      </div>
-      <div id="images">
-        <img
-        src="http://bestanimations.com/Animals/Mammals/Cats/Lions/animated-lion-gif-11.gif",
-        " alt="Lion" /><br />Dr. Lion
-
-        <p>
-          vote:<button onclick="increase(this)">0</button
-          ><button onclick="reset(this)">Reset</button>
-        </p>
-      </div>
     </section>
+
+    <script src="javaS.js"></script>
   </body>
 </html>
