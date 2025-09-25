@@ -1,5 +1,5 @@
 // Fetch all characters from the local JSON server
-fetch("http://localhost:6000/characters")
+fetch("http://localhost:3001/characters")
   .then((res) => res.json())
   .then((data) => {
     const animalList = document.getElementById("animal-list");
