@@ -1,4 +1,4 @@
-// Fetch all characters from the local JSON server
+// Fetch all characters once when page loads
 fetch("http://localhost:3001/characters")
   .then((res) => res.json())
   .then((data) => {
@@ -8,22 +8,21 @@ fetch("http://localhost:3001/characters")
       const btn = document.createElement("button");
       btn.textContent = animal.name;
 
-      // Click event to show animal details
-      btn.addEventListener("click", () => showDetails(animal));
+      // Show details when clicked
+      btn.addEventListener("click", () => renderDetails(animal));
 
       animalList.appendChild(btn);
     });
   })
   .catch((err) => console.error("Error fetching animals:", err));
 
-// Show animal details dynamically
-function showDetails(animal) {
+// Render animal details
+function renderDetails(animal) {
   const details = document.getElementById("animal-details");
 
-  // Clear previous content
+  // Clear old details only when switching animals
   details.innerHTML = "";
 
-  // Create elements dynamically
   const name = document.createElement("h2");
   name.textContent = animal.name;
 
@@ -34,29 +33,60 @@ function showDetails(animal) {
   const voteBox = document.createElement("div");
   voteBox.classList.add("vote-box");
 
-  const voteBtn = document.createElement("button");
-  voteBtn.textContent = "Vote";
-  voteBtn.addEventListener("click", () => {
-    animal.votes++;
-    votes.textContent = animal.votes;
-  });
-
+  // vote update directly
   const votes = document.createElement("span");
   votes.classList.add("votes");
   votes.textContent = animal.votes;
 
-  const resetBtn = document.createElement("button");
-  resetBtn.textContent = "Reset";
-  resetBtn.addEventListener("click", () => {
-    animal.votes = 0;
-    votes.textContent = 0;
+  // Vote button
+  const voteBtn = document.createElement("button");
+  voteBtn.type = "button";
+  voteBtn.textContent = "Vote";
+  voteBtn.addEventListener("click", () => {
+    // fetch(`http://localhost:3001/characters/${animal.id}`, {
+    //   method: "PATCH",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ votes: animal.votes + 1 }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((updatedAnimal) => {
+    //     animal.votes = updatedAnimal.votes;
+    //     votes.textContent = updatedAnimal.votes;
+    //   });
+    updateVotes(animal, votes, animal.votes + 1);
   });
 
-  voteBox.appendChild(voteBtn);
-  voteBox.appendChild(votes);
-  voteBox.appendChild(resetBtn);
+  // Reset button
+  const resetBtn = document.createElement("button");
+  resetBtn.type = "button";
+  resetBtn.textContent = "Reset";
+  resetBtn.addEventListener("click", () => {
+    // fetch(`http://localhost:3001/characters/${animal.id}`, {
+    //   method: "PATCH",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ votes: 0 }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((updatedAnimal) => {
+    //     animal.votes = updatedAnimal.votes;
+    //     votes.textContent = updatedAnimal.votes;
+    //   });
+    updateVotes(animal, votes, 0);
+  });
 
-  details.appendChild(name);
-  details.appendChild(img);
-  details.appendChild(voteBox);
+  voteBox.append(voteBtn, votes, resetBtn);
+  details.append(name, img, voteBox);
+}
+
+function updateVotes(animal, votes, count) {
+  fetch(`http://localhost:3001/characters/${animal.id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ votes: count }),
+  })
+    .then((res) => res.json())
+    .then((updatedAnimal) => {
+      animal.votes = updatedAnimal.votes;
+      votes.textContent = updatedAnimal.votes;
+    });
 }
