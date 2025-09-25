@@ -4,83 +4,88 @@
   box-sizing: border-box;
 }
 
-/* Page background */
 body {
-  background: gray;
-  margin: 25px;
-  color: black;
   font-family: Arial, sans-serif;
-}
-
-/* Intro paragraph */
-.p {
   text-align: center;
-  margin: 30px;
+  background: rgb(209, 235, 207);
+  color: #333;
+  padding: 20px;
+  
 }
 
-/* Main heading */
 h1 {
-  text-align: center;
-  margin: 40px 0;
-}
-
-/* Animal list container */
-.anlist {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* Animal card */
-.animal {
-  background-color: aliceblue;
+  border: 10px;
+  border-radius: 0px;
+  background-color: rgb(80, 99, 185);
+  box-shadow: 0 6px 20px rgb(46, 32, 20);
   padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.animal-list {
+  width: 250px;
+}
+
+.animal-list button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  background: lightblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.animal-list button:hover {
+  background: #005fa3;
+}
+
+.animal-details {
+  max-width: 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.animal-details img {
+  width: 100%;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 150px;
+  margin-bottom: 10px;
 }
 
-/* Animal image */
-.animal img {
-  width: 100px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-/* Vote + Reset buttons with number in one row */
 .vote-box {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
-/* Vote count number */
-.votes {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: darkblue;
-}
-
-/* Buttons */
-button {
-  padding: 5px 10px;
-  margin: 3px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid brown;
-  background-color: white;
-  color: brown;
-  transition: 0.3s;
-}
-
-/* Button hover effect */
-button:hover {
-  background-color: brown;
+.vote-box button {
+  background: #0618bb;
   color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.vote-box button:hover {
+  background: #005fa3;
+}
+
+.vote-box .votes {
+  font-weight: bold;
+  color: #02518a;
+}
+.p{
+  margin: 20px;
 }
